@@ -1,0 +1,11 @@
+language:
+    node_js
+node_js:
+    - 0.8
+before_script:
+    # install dependencies
+    - npm update -g npm
+    - npm install qunit-phantomjs-runner
+script:
+    # We want to gate on passing tests and a successful build
+    - phantomjs node_modules/qunit-phantomjs-runner/runner.js tests/index.html 10

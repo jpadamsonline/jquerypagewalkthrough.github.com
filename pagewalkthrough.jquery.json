@@ -8,16 +8,29 @@
         "highlighting",
         "guide"
     ],
-    "version": "1.1.1",
+    "version": "2.7.2",
     "author": {
         "name": "Erwin Yusrizal",
-        "url": "erwin.yusrizal@gmail.com"
+        "email": "erwin.yusrizal@gmail.com"
     },
     "maintainers": [
         {
-            "name": "Erwin Yusrizal",
-            "email": "erwin.yusrizal@gmail.com",
-            "url": "http://jquerypagewalkthrough.github.com"
+            "name": "James West"
+        },
+        {
+            "name": "JP Adams",
+            "email": "jpadamsonline@gmail.com",
+            "url": "https://github.com/jpadamsonline"
+        }
+        {
+            "name": "James Warwood",
+            "email": "james.duncan.1991@googlemail.com",
+            "url": "https://github.com/jwarby"
+        },
+        {
+            "name": "Craig Roberts",
+            "email": "craig0990@gmail.com",
+            "url": "https://github.com/craig0990"
         }
     ],
     "licenses": [
@@ -27,14 +40,14 @@
         }
     ],
     "repository": {
-            "type": "git",
-    	    "url": "git://github.com/jquerypagewalkthrough/jquerypagewalkthrough.git"
-	    },
+        "type": "git",
+        "url": "git://github.com/jwarby/jquery-pagewalkthrough.git"
+    },
     "bugs": "",
-    "homepage": "http://jquerypagewalkthrough.github.com",
-	"demo": "http://jquerypagewalkthrough.github.com/example/example.html",
-    "docs": "http://jquerypagewalkthrough.github.com",
-    "download": "https://github.com/jquerypagewalkthrough/jquerypagewalkthrough.github.com/zipball/master",
+    "homepage": "https://github.com/jwarby/jquery-pagewalkthrough",
+	"demo": "http://jwarby.github.io/jquery-pagewalkthrough",
+    "docs": "https://github.com/jwarby/jquery-pagewalkthrough",
+    "download": "https://github.com/jwarby/jquery-pagewalkthrough/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.4"
     }

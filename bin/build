@@ -1,0 +1,57 @@
+#! /bin/bash
+
+# Input files
+JS_SRC=src/jquery.pagewalkthrough.js
+LESS_SRC=src/css/jquery.pagewalkthrough.less
+
+# Output
+DEST=dist/
+
+# Build step
+function step() {
+    local CMD=$1
+    local MSG=$2
+
+    echo -n "${MSG}..."
+
+    $1 >/dev/null || {
+        echo " Failed, aborting."
+        exit 1;
+    }
+
+    echo " OK."
+}
+
+# Entry conditions - build script dependencies
+step "command -v lessc" "Checking dependencies - lessc"
+step "command -v uglifyjs" "Checking dependencies - uglifyjs"
+step "command -v jshint" "Checking dependencies - jshint"
+
+# Create dist directory
+step "mkdir -p ${DEST}" "Creating build files directory (${DEST})"
+
+# Lint src file
+step "jshint src/" "Linting src/"
+
+# Copy un-minified version
+step "cp -r src/* $DEST" "Copying sources to '$DEST'"
+
+# Create minified version
+step "uglifyjs $JS_SRC -o ${DEST}jquery.pagewalkthrough.min.js" \
+     "Uglifying JS as '$DEST/jquery.pagewalkthrough.min.js'"
+
+# Make dist/css directory if it doesn't exist
+step "mkdir -p ${DEST}css/" "Creating '${DEST}css/'"
+
+# Compile less
+step "lessc $LESS_SRC ${DEST}css/jquery.pagewalkthrough.css" \
+     "Compiling LESS into '${DEST}css/jquery.pagewalkthrough.css'"
+
+# Minify CSS
+step "lessc --compress $LESS_SRC ${DEST}css/jquery.pagewalkthrough.min.css" \
+     "Minifying LESS into '${DEST}css/jquery.pagewalkthrough.min.css'"
+
+# Remove LESS from dist/css/
+step "rm ${DEST}css/*.less" "Removing source LESS file(s)"
+
+echo "Build finished."

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Page Walkthrough Unit Tests</title>
+    <link rel="stylesheet" href="qunit-1.14.0.css">
+    <script src="./jquery-2.1.1.js"></script>
+    <style>
+        #qunit-fixture, #jpwOverlay, #jpWalkthrough, #jpwClose {
+          position: absolute;
+          left: -9999px;
+          top: -9999px;
+        }
+    </style>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="./qunit-1.14.0.js"></script>
+    <script src="./blanket.min.js"></script>
+    <script src="../src/jquery.pagewalkthrough.js" data-cover></script>
+    <script src="./tests.js"></script>
+</body>
+</html>
